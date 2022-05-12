@@ -1,0 +1,337 @@
+/* globalni stilovi i layout stranice (body) */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7vw;
+}
+
+.App-header {
+  background-color:olive;
+  max-height: 20vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:stretch;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-bottom: 0.5em;
+}
+
+
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/* spremnik poruka, glavni stilovi za izgled */
+.messagesContainer{
+  padding: 0.5em;
+  margin:2% 0;
+  width: 65%;
+  height: 77%;
+  overflow: auto;
+  border-radius: 10px;
+  scrollbar-width: auto;
+  scrollbar-color:  #a19a9a lightgray; 
+}
+
+/* stilovi za scroll traku ul elementa/liste poruka */
+.messagesContainer::-webkit-scrollbar {
+  width: 8px;
+  background-color: lightgray;
+  border-radius: 8px;
+}
+
+
+.messagesContainer::-webkit-scrollbar-thumb {
+  background-color: #a19a9a;
+  border-radius: 20px;
+}
+
+/* spremnik zasebne poruke */
+.message{
+  list-style-type: none;
+  margin-top: 2%;
+  padding: 5px;
+  font-size: 1.5em;
+}
+
+/* stilovi za primljenu i poslanu poruku, align lijevo, desno */
+.alignMessageToTheRight{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0.8em;
+}
+
+.alignMessageToTheLeft{
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* stilovi za ikonu, profilnu sliku korisnika koji je poslao poruku */
+
+.iconStyle{
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  display: block;
+}
+
+.iconStyle img{
+  height: 100%;
+  width: 100%;
+}
+
+.alignMessageToTheRight .iconStyle{
+  margin-left: 3%;
+}
+
+.alignMessageToTheLeft .iconStyle{
+  margin-right: 3%;
+}
+
+/* stilovi sadrzaja poruke, tekst poruke, ime korisnika itd. */
+
+.content{
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.alignMessageToTheRight .content {
+  align-items: flex-end;
+}
+
+.alignMessageToTheLeft .content {
+  align-items: flex-start;
+}
+
+/* layout i izgled teksta poruke */
+
+.content p{
+  display: inline-block;
+  padding: 0.6em;
+  min-width: 5ch;
+  border-radius: 1.1em;
+  color: whitesmoke;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-align: center;
+  text-justify: inter-word;
+}
+
+/* stilovi za ime korisnika */
+
+.alignMessageToTheLeft .content h4{
+  justify-content: flex-start;
+  text-align: start;
+  margin-left: 0.5em;
+}
+
+.content h4{
+  padding-bottom: 5px;
+}
+
+.alignMessageToTheRight .content h4{
+  justify-content: flex-end;
+  text-align: end;
+  margin-right: 0.5em;
+}
+
+.alignMessageToTheLeft .content p{
+  background-color:goldenrod;
+  justify-content: flex-start;
+}
+
+.alignMessageToTheRight .content p{
+  background-color: rgb(255, 123, 0);
+  justify-content: flex-end;
+}
+
+/* .form-Input za unos i slanje poruka */
+
+.form-Input{
+  z-index: 5;
+  width: 90%;
+  height: 5%;
+  padding-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.form-Input input{
+  border: 1px solid green;
+  border-radius: 0.5em;
+  height: 50%;
+  width: 85%;
+  text-align: left;
+  padding: 0.5%;
+  vertical-align: middle;
+  font-size: 1.5em;
+}
+
+.form-Input input:focus{
+  outline: 1px solid blue;
+}
+
+.form-Input button{
+  font-size: 1em;
+  width: 10%;
+  height: 100%;
+  padding: 1em;
+  text-align: center;
+  border: 3px solid rgb(0, 0, 0);
+  color: rgb(209, 209, 209);
+  background-color:darkgreen;
+  border-radius: 1em;
+  line-height: 20%;
+}
+
+ /* stilovi za button kod klika */
+
+.form-Input button:active{
+  background-color: rgb(0, 148, 7);
+  color: whitesmoke;
+}
+
+
+.form-Input button:hover{
+  transform: scale(1.1);
+}
+
+
+@media only screen and (min-width: 2000px){
+  /* body velicina fonta i polje za unos poruke */
+  body {
+    font-size: 0.7vw;
+  }
+  .form-Input input{
+    height: 25%;
+    width: 85%;
+    padding: 1%;
+  }
+
+
+  .messagesContainer::-webkit-scrollbar {
+    width: 33px;
+    background-color: #a19a9a;
+    border-radius: 10px;
+}
+}
+
+@media only screen and (max-width: 1200px){
+  	.form-Input {
+      height: 5%;
+      margin-bottom: 2%;
+    }
+
+    .form-Input button {
+      height: 90%;  }
+
+    @media only screen and (max-height: 300px){
+      .form-Input{
+        height: 20%;
+      }
+    }
+    
+  
+}
+
+
+
+@media only screen and (max-width: 1000px){
+
+    /* body velicina fonta i gumb za slanje poruke */
+
+  body {
+    font-size: 1vw;
+  }
+}
+
+
+@media only screen and (max-width: 700px){
+  /* body velicina fonta i naslov aplikacije */
+  body {
+    font-size: 3vw;
+  }
+  
+.App-header {
+  background-color: #282c34;
+  max-height: 23vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items:stretch;
+  justify-content: center;
+  font-size: calc(5px + 2vmin);
+  color: white;
+}
+/* stilovi poruke */
+.messagesContainer{
+  margin:2% 0;   
+  width: 90%;
+  height:80%;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+.content h4{
+  font-size: 4vw;
+}
+
+.content p{
+  display: inline-block;
+  border-radius: 1em;
+  color: whitesmoke;
+  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-align: center;
+  text-justify: inter-word;
+  font-size: 1em;
+}
+
+.form-Input{
+  margin-bottom: 5%;
+  height: 6%;
+}
+
+.form-Input input{
+  padding:2%;
+  border: 1px solid green;
+  border-radius: 0.5em;
+  height: 50%;
+  width: 60%;
+  font-size: 1em;
+}
+
+  
+.form-Input button{
+  font-size: 1em;
+  width: 30%;
+  padding: 1em;
+  text-align: center;
+  border-radius: 0.5em;
+}
+}
+
